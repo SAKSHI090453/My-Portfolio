@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "build": "tsc && xcopy \"src\\migrations\\*.sql\" \"dist\\migrations\\\" /Y",
+    "build": "tsc && cpx \"src/migrations/*.sql\" dist/migrations",
     "start": "node dist/index.js",
     "migrate": "node dist/migrations/migrate.js"
   },
@@ -36,6 +36,7 @@
     "@types/jsonwebtoken": "^9.0.5",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.8.10",
+    "cpx": "^1.5.0",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
